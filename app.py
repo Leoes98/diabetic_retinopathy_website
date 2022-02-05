@@ -17,7 +17,7 @@ st.set_page_config(
 #
 '''
 # Load Image
-image = st.file_uploader("Choose an image")
+image = st.file_uploader("Choose an image", type=["jpeg", 'jpg', 'png'])
 
 if st.button("Make Prediction"):
     if image is not None:
