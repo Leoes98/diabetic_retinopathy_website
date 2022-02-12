@@ -3,26 +3,26 @@ import requests
 
 st.set_page_config(
     page_title=
-    "DR prediction interface",  # => Quick reference - Streamlit
+    "AI DR Assistant",
     page_icon="⚕️",
-    layout="centered",  # wide
-    initial_sidebar_state="auto")  # collapsed
+    layout="centered",
+    initial_sidebar_state="auto")
 
 
 '''
-# Diabetic Retinopathy Interface
+# AI Diabetic Retinopathy Assistant
 '''
 
-st.write("\
-    Here goes the introduction of the MVP ..................................\
-    ........................................................................\
-    ........................................................................\
-    ........................................................................\
-    ........................................................................\
-    ........................................................................\
-    ........................................................................\
-    ........................................................................\
-    ")
+st.write("""\
+        This platform is meant to reduce the gap between AI and medicine. This AI DR assistant \
+        is an accessible online system to support medical professionals during the diagnosis. \
+            The physician uploads a retina image to be classified by the AI model.
+
+        The prediction will show one of these outputs:
+        * 0: No DR.
+        * 1: Mild DR.
+        * 2: Severe DR.
+        """)
 
 
 '''
@@ -41,13 +41,16 @@ if st.button("Make Prediction"):
         st.image(image, width=500)
         st.subheader("Prediction")
         if pred[-1][0] == 0:
-            st.write(f"It's likely that you don't have diabetic retinopathy.")
+            st.write(f"""
+                     0: No DR.  \n It's likely that you don't have diabetic retinopathy.""")
         elif pred[-1][0] == 2:
-            st.write(f"You may have mild or moderate diabetic retinopathy, \
-                we suggest a visit to an ophthalmologist for a screening.")
+            st.write(f"""
+                     1: Mild DR.  \n You may have mild or moderate diabetic retinopathy, \
+                we suggest a visit to an ophthalmologist for a screening.""")
         else:
-            st.write("You may have severe or proliferative diabetic retinopathy\
-                , you should have a recurrent screening with your ophthalmologist.")
+            st.write("""
+                     2: Severe DR.  \n You may have severe or proliferative diabetic retinopathy\
+                , you should have a recurrent screening with your ophthalmologist.""")
 
 st.subheader("Disclaimer")
 st.write("This analysis does not replace an ophthalmologist diagnosis, \
@@ -64,3 +67,7 @@ st.markdown("""
             * [Martin Morcos](https://github.com/bernamr)
             * [Nicolás Núñez](https://github.com/nico-nv)
 """)
+"""
+Github source code:
+* [Backend](https://github.com/Leoes98/diabetic_retinopathy_DL)
+* [Frontend](https://github.com/Leoes98/diabetic_retinopathy_website)"""
