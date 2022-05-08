@@ -1,6 +1,5 @@
 import streamlit as st
 import requests
-from backend import make_prediction
 
 st.set_page_config(
     page_title=
@@ -35,7 +34,10 @@ image = st.file_uploader("Choose a retina image to analyze..."
 
 if st.button("Make Prediction"):
     if image is not None:
-        pred = make_prediction(image)
+        params = {"img_file": image.getvalue()}
+        api_url = "https://gcp-api-dr-cwcjlajpfq-uc.a.run.app/predict"
+        res = requests.post(api_url, files=params)
+        pred = res.json()
         st.image(image, width=500)
         st.subheader("Prediction")
         if pred[-1][0] == 0:
