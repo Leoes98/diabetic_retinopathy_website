@@ -1,4 +1,4 @@
-# Diabetic Retinopathy Classification
+# Diabetic Retinopathy Classification Website
 
 ## Table of Contents
 
