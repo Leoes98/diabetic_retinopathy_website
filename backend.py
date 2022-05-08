@@ -1,11 +1,11 @@
-import tensorflow as tf
+import tflite_runtime.interpreter as tflite
 import numpy as np
 from PIL import Image
 
 class TensorflowLiteClassificationModel:
 
     def __init__(self, model_path, labels, image_size=224):
-        self.interpreter = tf.lite.Interpreter(model_path=model_path)
+        self.interpreter = tflite.Interpreter(model_path=model_path)
         self.interpreter.allocate_tensors()
         self._input_details = self.interpreter.get_input_details()
         self._output_details = self.interpreter.get_output_details()
