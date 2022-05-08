@@ -25,7 +25,7 @@ The previous version used an API to get the predictions. However, it was deploye
 
 ## LINKS
 
-🌟 [Web app URL](https://spiffy-mermaid-49dc45.netlify.app/)
+🌟 [Web app URL](https://diabetic-retinopathy-dl.herokuapp.com/)
 
 
 ## RESOURCES
