@@ -27,6 +27,7 @@ The previous version used an API to get the predictions. However, it was deploye
 
 🌟 [Web app URL](https://diabetic-retinopathy-dl.herokuapp.com/)
 
+🌟 [PDF Pitch](https://github.com/Leoes98/diabetic_retinopathy_website/blob/master/Pitch_AI_Diabetic_Retinopathy_Assistant.pdf)
 
 ## RESOURCES
 
